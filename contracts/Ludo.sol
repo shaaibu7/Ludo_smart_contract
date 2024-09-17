@@ -12,10 +12,12 @@ contract Ludo  {
 
     address owner;
 
+    array diceValues = [1, 2, 3, 4, 5, 6];
+
     constructor() {
         owner = msg.sender
     }
 
-    function rollDice() external {}
+    function rollDice(address _player) external {}
     
 }
