@@ -8,7 +8,7 @@ import "@chainlink/contracts/src/v0.8/vrf/VRFConsumerBase.sol";
 // Uncomment this line to use console.log
 // import "hardhat/console.sol";
 
-contract Ludo is VRFConsumerBase {
+contract Ludo {
 
     address owner;
 
@@ -17,15 +17,20 @@ contract Ludo is VRFConsumerBase {
         bool winStatus;
     }
 
-    Player[] public totalPlayers;
+    // stores players in the game
+    PlayerData[] public totalPlayers;
 
+    // tracks player using an id mapped to the player address
     mapping (address => uint) playerId;
 
-    array dicePossibleValues = [1, 2, 3, 4, 5, 6];
+    // store possible outcomes in rooling a dice
+    uint8[] dicePossibleValues = [1, 2, 3, 4, 5, 6];
 
     constructor() {
-        owner = msg.sender
+        owner = msg.sender;
     }
+
+    function playGame() external {}
 
     function rollDice(address _player) external {}
     
