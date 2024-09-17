@@ -12,6 +12,15 @@ contract Ludo is VRFConsumerBase {
 
     address owner;
 
+    struct PlayerData {
+        address playerAddress;
+        bool winStatus;
+    }
+
+    Player[] public totalPlayers;
+
+    mapping (address => uint) playerId;
+
     array dicePossibleValues = [1, 2, 3, 4, 5, 6];
 
     constructor() {
